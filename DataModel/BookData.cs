@@ -51,5 +51,32 @@ namespace DataModel
             }
             finally { data.Close(); }
         }
+
+        public void InsertSP(Book New)
+        {
+            try
+            {
+                data.SP("BookInsertSP");
+                data.Parameters("@Title", New.Title);
+                data.Parameters("@Description", New.Description);
+                data.Parameters("@Author", New.Author);
+                data.Parameters("@Year", New.Year);
+                data.Parameters("@Url", New.Url);
+                data.Parameters("@Cover", New.Cover);
+                data.Parameters("@IdCategory", New.Category.Id);
+                data.Parameters("@IdGenre", New.Genre.Id);
+                data.Parameters("@IdPublic", New.Public.Id);
+                data.Execute();
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                data.Close();
+            }
+
+        }
     }
 }
