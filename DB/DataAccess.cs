@@ -11,7 +11,7 @@ namespace DB
     {
         public DataAccess()
         {
-            connection = new SqlConnection("server=BRENDA-PC; database=Books_DB; integrated security=true");
+            connection = new SqlConnection("server=BRENDA-PC; database=Book_DB; integrated security=true");
             command = new SqlCommand();
         }
         private SqlConnection connection;
@@ -22,29 +22,51 @@ namespace DB
             get { return reader; }
         }
 
-        public void Query()
+        public void Query(string query)
         {
-
+            command.CommandType = System.Data.CommandType.Text;
+            command.CommandText = query;
         }
         public void Read()
         {
-
+            try
+            {
+                command.Connection = connection;
+                connection.Open();
+                reader = command.ExecuteReader();
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
         }
-        public void SP()
+        public void SP(string SP)
         {
-
+            command.CommandType = System.Data.CommandType.StoredProcedure;
+            command.CommandText = SP;
         }
-        public void Parameters()
+        public void Parameters(string ParameterName, object value)
         {
-
+            command.Parameters.AddWithValue(ParameterName, value);
         }
         public void Execute()
         {
-
+            try
+            {
+                command.Connection = connection;
+                connection.Open();
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
         public void Close()
         {
-
+            if (reader != null)
+                reader.Close();
+            connection.Close();
         }
 
     }
