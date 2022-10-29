@@ -45,7 +45,7 @@ namespace DataModel
                 }
                 return List;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }
@@ -68,7 +68,7 @@ namespace DataModel
                 data.Parameters("@IdPublic", New.Public.Id);
                 data.Execute();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }
@@ -104,6 +104,21 @@ namespace DataModel
                 data.Close();
             }
 
+        }
+    
+        public void DeleteSP(int Id)
+        {
+            try
+            {
+                data.SP("BookDeleteSP");
+                data.Parameters("@Id", Id);
+                data.Execute();
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+            finally { data.Close(); }
         }
     }
 }
