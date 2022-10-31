@@ -13,7 +13,7 @@
 
             <!-- Filtro Buscador(x Nombre, Autor) -->
             <asp:TextBox ID="TxtSearch" runat="server"></asp:TextBox>
-            <asp:Button ID="BtnSearch" runat="server" Text="Button" />
+            <asp:Button ID="BtnSearch" OnClick="BtnSearch_Click" runat="server" Text="Search" />
             <!-- Filtro DropDown(x Categoria) -->
             <asp:DropDownList ID="DdlCategory" runat="server"></asp:DropDownList>
             <!-- Filtro DropDown(x Genero) -->
@@ -27,7 +27,6 @@
             <!-- GridView(con btn delete, uodate) -->
             <asp:GridView ID="GvBook" AutoGenerateColumns="false" runat="server">
                 <Columns>
-                    
                     <asp:BoundField DataField="Title" HeaderText="Title" />
                     <asp:BoundField DataField="Description" HeaderText="Description" />
                     <asp:BoundField DataField="Author" HeaderText="Author" />

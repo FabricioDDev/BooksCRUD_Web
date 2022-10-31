@@ -13,13 +13,32 @@ namespace BooksCRUD.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            GvBookCharge();
+            if(!IsPostBack)
+                GvBookCharge();
+        }
+        private void GvBookCharge(List<Book>List)
+        {
+            if(List == null)
+            {
+                BookData BookD = new BookData();
+                GvBook.DataSource = BookD.ListingSP();
+                GvBook.DataBind();
+                return;
+            }
+            GvBook.DataSource = List;
+            DataBind(); 
         }
         private void GvBookCharge()
         {
             BookData BookD = new BookData();
             GvBook.DataSource = BookD.ListingSP();
             GvBook.DataBind();
+        }
+
+        protected void BtnSearch_Click(object sender, EventArgs e)
+        {
+            BookData BookD = new BookData();
+            GvBookCharge(BookD.FilterList(TxtSearch.Text));
         }
     }
 }

@@ -55,6 +55,22 @@ namespace DataModel
             finally { data.Close(); }
         }
 
+        //SobreCarga1
+        public List<Book> FilterList(string Filter)
+        {
+            try
+            {
+                List<Book> List = ListingSP().FindAll(x => x.Title == Filter || x.Author == Filter);
+                return List;
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
+        
+        
+        
         public void InsertSP(Book New)
         {
             try
