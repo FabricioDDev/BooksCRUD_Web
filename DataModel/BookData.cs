@@ -20,7 +20,7 @@ namespace DataModel
             List<Book> List = new List<Book>();
             try
             {
-                data.SP("BookListSP");
+                data.SP("BookList_SP");
                 data.Read();
                 while (data.PropReader.Read())
                 {
@@ -32,15 +32,18 @@ namespace DataModel
                     aux.Year = (int)data.PropReader["Year"];
                     aux.Url = (string)data.PropReader["Url"];
                     aux.Cover = (string)data.PropReader["Cover"];
+
                     aux.Category = new Category();
-                    aux.Category.Id = (int)data.PropReader["Id"];
-                    aux.Category.Name = (string)data.PropReader["Name"];
+                    aux.Category.Id = (int)data.PropReader["IdC"];
+                    aux.Category.Name = (string)data.PropReader["NameC"];
+
                     aux.Genre = new Genre();
-                    aux.Genre.Id = (int)data.PropReader["Id"];
-                    aux.Genre.Name = (string)data.PropReader["Name"];
+                    aux.Genre.Id = (int)data.PropReader["IdG"];
+                    aux.Genre.Name = (string)data.PropReader["NameG"];
+
                     aux.Public = new Public();
-                    aux.Public.Id = (int)data.PropReader["Id"];
-                    aux.Public.Name = (string)data.PropReader["Name"];
+                    aux.Public.Id = (int)data.PropReader["IdP"];
+                    aux.Public.Name = (string)data.PropReader["NameP"];
                     List.Add(aux);
                 }
                 return List;

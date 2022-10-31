@@ -25,7 +25,20 @@
             <!-- btn ADD -->
             <asp:Button ID="BtnAddBook" runat="server" Text="Button" />
             <!-- GridView(con btn delete, uodate) -->
-            <asp:GridView ID="GvBook" runat="server"></asp:GridView>
+            <asp:GridView ID="GvBook" AutoGenerateColumns="false" runat="server">
+                <Columns>
+                    
+                    <asp:BoundField DataField="Title" HeaderText="Title" />
+                    <asp:BoundField DataField="Description" HeaderText="Description" />
+                    <asp:BoundField DataField="Author" HeaderText="Author" />
+                    <asp:BoundField DataField="Year" HeaderText="Year" />
+                    <asp:BoundField DataField="Url" HeaderText="Url" />
+                    <asp:BoundField DataField="Cover" HeaderText="Cover" />
+                    <asp:BoundField DataField="Category.Name"  HeaderText="Category" />
+                    <asp:BoundField DataField="Genre.Name" HeaderText="Genre" />
+                    <asp:BoundField DataField="Public.Name" HeaderText="Public" />
+                </Columns>
+            </asp:GridView>
 
         </div>
     </form>

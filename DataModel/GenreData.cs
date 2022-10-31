@@ -32,9 +32,11 @@ namespace DataModel
                 }
                 return List;
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 throw ex;
             }
             finally { data.Close(); }
+        }
     }
 }

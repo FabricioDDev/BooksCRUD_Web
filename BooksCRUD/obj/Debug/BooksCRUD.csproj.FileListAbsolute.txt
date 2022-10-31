@@ -57,3 +57,9 @@ C:\Users\brenda\Desktop\Proyectos\BooksCRUD_Solution\BooksCRUD\obj\Debug\BooksCR
 C:\Users\brenda\Desktop\Proyectos\BooksCRUD_Solution\BooksCRUD\obj\Debug\BooksCRUD.csproj.CopyComplete
 C:\Users\brenda\Desktop\Proyectos\BooksCRUD_Solution\BooksCRUD\obj\Debug\BooksCRUD.dll
 C:\Users\brenda\Desktop\Proyectos\BooksCRUD_Solution\BooksCRUD\obj\Debug\BooksCRUD.pdb
+C:\Users\brenda\Desktop\Proyectos\BooksCRUD_Solution\BooksCRUD\bin\DataModel.dll
+C:\Users\brenda\Desktop\Proyectos\BooksCRUD_Solution\BooksCRUD\bin\DomainModel.dll
+C:\Users\brenda\Desktop\Proyectos\BooksCRUD_Solution\BooksCRUD\bin\DB.dll
+C:\Users\brenda\Desktop\Proyectos\BooksCRUD_Solution\BooksCRUD\bin\DataModel.pdb
+C:\Users\brenda\Desktop\Proyectos\BooksCRUD_Solution\BooksCRUD\bin\DomainModel.pdb
+C:\Users\brenda\Desktop\Proyectos\BooksCRUD_Solution\BooksCRUD\bin\DB.pdb
