@@ -46,5 +46,27 @@ namespace BooksCRUD.Views
             else
                 GvBookCharge();
         }
+
+        protected void CbxAdvancedFilter_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CbxAdvancedFilter.Checked)
+            {
+                LblCriterion.Visible = true;
+                DdlCriterion.Visible = true;
+                LblCamp.Visible = true;
+                DdlCampo.Visible = true;
+                btnApply.Visible = true;
+                BtnDeleteFilter.Visible = true;
+            }
+            else
+            {
+                LblCriterion.Visible = false;
+                DdlCriterion.Visible = false;
+                LblCamp.Visible = false;
+                DdlCampo.Visible = false;
+                btnApply.Visible = false;
+                BtnDeleteFilter.Visible = false;
+            }
+        }
     }
 }

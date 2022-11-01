@@ -13,16 +13,21 @@
 
             <!-- Filtro Buscador(x Nombre, Autor) -->
             <asp:TextBox ID="TxtSearch" OnTextChanged="TxtSearch_TextChanged" AutoPostBack="true" runat="server"></asp:TextBox>
-            <!-- Filtro DropDown(x Categoria) -->
-            <asp:DropDownList ID="DdlCategory" runat="server"></asp:DropDownList>
-            <!-- Filtro DropDown(x Genero) -->
-            <asp:DropDownList ID="DdlGenre" runat="server"></asp:DropDownList>
-            <!-- Filtro DropDown(x Publico) -->
-            <asp:DropDownList ID="DdlPublic" runat="server"></asp:DropDownList>
-            <!-- Filtro DropDown(x Año) -->
-            <asp:DropDownList ID="DdlYear" runat="server"></asp:DropDownList>
+            <!-- Filtro Avanzado -->
+                <!-- CheckBox-->
+                <asp:CheckBox ID="CbxAdvancedFilter" AutoPostBack="true" OnCheckedChanged="CbxAdvancedFilter_CheckedChanged" runat="server" />
+                <!--DropDownList -->
+                <asp:Label ID="LblCamp" Visible="false" runat="server" Text="Camp"></asp:Label>
+                <asp:DropDownList ID="DdlCampo" Visible="false" runat="server"></asp:DropDownList>
+                <!-- DropDownList-->
+                <asp:Label ID="LblCriterion" Visible="false" runat="server" Text="Criterion"></asp:Label>
+                <asp:DropDownList ID="DdlCriterion" Visible="false" runat="server"></asp:DropDownList>
+                <!-- Buttons-->
+                <asp:Button ID="btnApply" Visible="false" runat="server" Text="Apply" />
+                <asp:Button ID="BtnDeleteFilter" Visible="false" runat="server" Text="X" />
+            
             <!-- btn ADD -->
-            <asp:Button ID="BtnAddBook" runat="server" Text="Button" />
+            <asp:Button ID="BtnAddBook" runat="server" Text="Add" />
             <!-- GridView(con btn delete, uodate) -->
             <asp:GridView ID="GvBook" AutoGenerateColumns="false" runat="server">
                 <Columns>
