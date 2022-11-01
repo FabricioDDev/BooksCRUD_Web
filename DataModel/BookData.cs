@@ -60,7 +60,9 @@ namespace DataModel
         {
             try
             {
-                List<Book> List = ListingSP().FindAll(x => x.Title == Filter || x.Author == Filter);
+                List<Book> List = ListingSP().FindAll(
+                    x => x.Title.ToUpper().Contains(Filter.ToUpper())
+                    || x.Author.ToUpper().Contains(Filter.ToUpper()));
                 return List;
             }
             catch(Exception ex)

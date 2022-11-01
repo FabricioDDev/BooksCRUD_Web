@@ -35,10 +35,16 @@ namespace BooksCRUD.Views
             GvBook.DataBind();
         }
 
-        protected void BtnSearch_Click(object sender, EventArgs e)
+        
+
+        protected void TxtSearch_TextChanged(object sender, EventArgs e)
         {
             BookData BookD = new BookData();
             GvBookCharge(BookD.FilterList(TxtSearch.Text));
+            if (TxtSearch.Text != "")
+                GvBookCharge(BookD.FilterList(TxtSearch.Text));
+            else
+                GvBookCharge();
         }
     }
 }

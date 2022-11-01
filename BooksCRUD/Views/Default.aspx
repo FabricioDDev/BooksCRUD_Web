@@ -12,8 +12,7 @@
         <div>
 
             <!-- Filtro Buscador(x Nombre, Autor) -->
-            <asp:TextBox ID="TxtSearch" runat="server"></asp:TextBox>
-            <asp:Button ID="BtnSearch" OnClick="BtnSearch_Click" runat="server" Text="Search" />
+            <asp:TextBox ID="TxtSearch" OnTextChanged="TxtSearch_TextChanged" AutoPostBack="true" runat="server"></asp:TextBox>
             <!-- Filtro DropDown(x Categoria) -->
             <asp:DropDownList ID="DdlCategory" runat="server"></asp:DropDownList>
             <!-- Filtro DropDown(x Genero) -->
