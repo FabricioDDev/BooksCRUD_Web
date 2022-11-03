@@ -33,6 +33,13 @@ namespace BooksCRUD.Views
             BookData BookD = new BookData();
             GvBook.DataSource = BookD.ListingSP();
             GvBook.DataBind();
+            CampFilterCharge();
+        }
+        private void CampFilterCharge()
+        {
+            DdlCampo.Items.Add("Category");
+            DdlCampo.Items.Add("Genre");
+            DdlCampo.Items.Add("Public");
         }
 
         
@@ -57,9 +64,11 @@ namespace BooksCRUD.Views
                 DdlCampo.Visible = true;
                 btnApply.Visible = true;
                 BtnDeleteFilter.Visible = true;
+                TxtSearch.Enabled = true;
             }
             else
             {
+                TxtSearch.Enabled = false;
                 LblCriterion.Visible = false;
                 DdlCriterion.Visible = false;
                 LblCamp.Visible = false;
@@ -68,5 +77,42 @@ namespace BooksCRUD.Views
                 BtnDeleteFilter.Visible = false;
             }
         }
+
+        protected void DdlCampo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (DdlCampo.SelectedItem.ToString() == "Category")
+            {
+                
+                DdlCriterion.Items.Clear();
+                CategoryData CategoryD = new CategoryData();
+                DdlCriterion.DataSource = CategoryD.Listing();
+                DdlCriterion.DataBind();
+            }
+            else if (DdlCampo.SelectedItem.ToString() == "Genre")
+            {
+                DdlCriterion.Items.Clear();
+                GenreData GenreD = new GenreData();
+                DdlCriterion.DataSource = GenreD.Listing();
+                DdlCriterion.DataBind();
+            }
+            else if (DdlCampo.SelectedItem.ToString() == "Public")
+            {
+                DdlCriterion.Items.Clear();
+                PublicData PublicD = new PublicData();
+                DdlCriterion.DataSource = PublicD.Listing();
+                DdlCriterion.DataBind();
+            }
+            
+        }
+
+        protected void btnApply_Click(object sender, EventArgs e)
+        {
+            string Camp = DdlCampo.SelectedItem.ToString();
+            string Criterion = DdlCriterion.SelectedItem.Value.ToString();
+            BookData BookD = new BookData();
+            GvBook.DataSource = BookD.FilterList(Camp, Criterion);
+            GvBook.DataBind();
+        }
+        
     }
 }

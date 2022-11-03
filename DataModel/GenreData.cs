@@ -21,7 +21,7 @@ namespace DataModel
             List<Genre> List = new List<Genre>();
             try
             {
-                data.Query("select Id, Name from CategoryTable");
+                data.Query("select Id, Name from GenreTable");
                 data.Read();
                 while (data.PropReader.Read())
                 {

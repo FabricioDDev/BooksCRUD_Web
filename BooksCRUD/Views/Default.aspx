@@ -17,13 +17,13 @@
                 <!-- CheckBox-->
                 <asp:CheckBox ID="CbxAdvancedFilter" AutoPostBack="true" OnCheckedChanged="CbxAdvancedFilter_CheckedChanged" runat="server" />
                 <!--DropDownList -->
-                <asp:Label ID="LblCamp" Visible="false" runat="server" Text="Camp"></asp:Label>
-                <asp:DropDownList ID="DdlCampo" Visible="false" runat="server"></asp:DropDownList>
+                <asp:Label ID="LblCamp"  Visible="false" runat="server" Text="Camp"></asp:Label>
+                <asp:DropDownList ID="DdlCampo" AutoPostBack ="true" OnSelectedIndexChanged="DdlCampo_SelectedIndexChanged" Visible="false" runat="server"></asp:DropDownList>
                 <!-- DropDownList-->
                 <asp:Label ID="LblCriterion" Visible="false" runat="server" Text="Criterion"></asp:Label>
                 <asp:DropDownList ID="DdlCriterion" Visible="false" runat="server"></asp:DropDownList>
                 <!-- Buttons-->
-                <asp:Button ID="btnApply" Visible="false" runat="server" Text="Apply" />
+                <asp:Button ID="btnApply" OnClick="btnApply_Click" Visible="false" runat="server" Text="Apply" />
                 <asp:Button ID="BtnDeleteFilter" Visible="false" runat="server" Text="X" />
             
             <!-- btn ADD -->
