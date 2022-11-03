@@ -24,7 +24,7 @@
                 <asp:DropDownList ID="DdlCriterion" Visible="false" runat="server"></asp:DropDownList>
                 <!-- Buttons-->
                 <asp:Button ID="btnApply" OnClick="btnApply_Click" Visible="false" runat="server" Text="Apply" />
-                <asp:Button ID="BtnDeleteFilter" Visible="false" runat="server" Text="X" />
+                <asp:Button ID="BtnDeleteFilter" OnClick="BtnDeleteFilter_Click" Visible="false" runat="server" Text="X" />
             
             <!-- btn ADD -->
             <asp:Button ID="BtnAddBook" runat="server" Text="Add" />

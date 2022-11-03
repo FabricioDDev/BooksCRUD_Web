@@ -110,9 +110,12 @@ namespace BooksCRUD.Views
             string Camp = DdlCampo.SelectedItem.ToString();
             string Criterion = DdlCriterion.SelectedItem.Value.ToString();
             BookData BookD = new BookData();
-            GvBook.DataSource = BookD.FilterList(Camp, Criterion);
-            GvBook.DataBind();
+            GvBookCharge(BookD.FilterList(Camp, Criterion));
         }
-        
+
+        protected void BtnDeleteFilter_Click(object sender, EventArgs e)
+        {
+            GvBookCharge();
+        }
     }
 }
