@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="Views\Default.aspx" />
+    <Content Include="Views\FrmBookRegister.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -82,6 +83,13 @@
     </Compile>
     <Compile Include="Views\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmBookRegister.aspx.cs">
+      <DependentUpon>FrmBookRegister.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\FrmBookRegister.aspx.designer.cs">
+      <DependentUpon>FrmBookRegister.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
