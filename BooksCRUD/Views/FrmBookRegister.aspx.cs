@@ -13,8 +13,28 @@ namespace BooksCRUD.Views
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			
+			ChargeDdlGroup();
 		}
-		
+		private void ChargeDdlGroup()
+		{
+			CategoryData categoryD = new CategoryData();
+			GenreData genreData = new GenreData();
+			PublicData publicData = new PublicData();
+
+			DdlCategory.DataSource = categoryD.Listing();
+			DdlCategory.DataTextField = "Name";
+			DdlCategory.DataValueField = "Id";
+			DdlCategory.DataBind();
+
+			DdlGenre.DataSource = genreData.Listing();
+			DdlGenre.DataTextField = "Name";
+			DdlGenre.DataValueField = "Id";
+			DdlGenre.DataBind();
+
+			DdlPublic.DataSource = publicData.Listing();
+			DdlPublic.DataTextField = "Name";
+			DdlPublic.DataValueField = "Id";
+			DdlPublic.DataBind();
+		}
 	}
 }
