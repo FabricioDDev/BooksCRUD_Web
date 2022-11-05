@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using DomainModel;
+using DataModel;
 
 namespace BooksCRUD.Views
 {
@@ -11,7 +13,8 @@ namespace BooksCRUD.Views
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
-
+			
 		}
+		
 	}
 }
