@@ -36,5 +36,23 @@ namespace BooksCRUD.Views
 			DdlPublic.DataValueField = "Id";
 			DdlPublic.DataBind();
 		}
-	}
+		
+		private void ChargeBook(int Id)
+        {
+			BookData bookData = new BookData();
+			Book book = bookData.ListingSP().Find(x => x.Id == Id);
+			TxtId.Text = book.Id.ToString();
+			TxtTitle.Text = book.Title;
+			TxtDescription.Text = book.Description;
+			TxtAuthor.Text = book.Author;
+			TxtUrl.Text = book.Url;
+			TxtCover.Text = book.Cover;
+			TxtYear.Text = book.Year.ToString();
+			//DdlCategory.SelectedItem.Value =;
+            //DdlGenre.SelectedItem.Value =;
+			//DdlPublic.SelectedItem.Value =;
+        }
+
+
+    }
 }
