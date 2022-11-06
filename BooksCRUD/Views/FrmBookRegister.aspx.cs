@@ -14,6 +14,8 @@ namespace BooksCRUD.Views
 		protected void Page_Load(object sender, EventArgs e)
 		{
 			ChargeDdlGroup();
+			
+			ChargeBook(7);
 		}
 		private void ChargeDdlGroup()
 		{
@@ -48,9 +50,9 @@ namespace BooksCRUD.Views
 			TxtUrl.Text = book.Url;
 			TxtCover.Text = book.Cover;
 			TxtYear.Text = book.Year.ToString();
-			//DdlCategory.SelectedItem.Value =;
-            //DdlGenre.SelectedItem.Value =;
-			//DdlPublic.SelectedItem.Value =;
+			DdlCategory.SelectedValue = book.Category.Id.ToString();
+            DdlGenre.SelectedValue = book.Genre.Id.ToString();
+			DdlPublic.SelectedValue = book.Public.Id.ToString();
         }
 
 
