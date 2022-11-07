@@ -20,7 +20,7 @@
             <asp:DropDownList ID="DdlCategory" runat="server"></asp:DropDownList>
             <asp:DropDownList ID="DdlGenre" runat="server"></asp:DropDownList>
             <asp:DropDownList ID="DdlPublic" runat="server"></asp:DropDownList>
-            <asp:Button ID="BtnFinish" runat="server" Text="Finish" />
+            <asp:Button ID="BtnFinish" OnClick="BtnFinish_Click" runat="server" Text="Finish" />
         </div>
 
     </form>

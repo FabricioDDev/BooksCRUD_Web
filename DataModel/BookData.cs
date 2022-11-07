@@ -215,7 +215,7 @@ namespace DataModel
                 data.Parameters("@Year", New.Year);
                 data.Parameters("@Url", New.Url);
                 data.Parameters("@Cover", New.Cover);
-                data.Parameters("@IdCategory", New.Category.Id);
+                data.Parameters("@IdCategory", New.Category.Id);    
                 data.Parameters("@IdGenre", New.Genre.Id);
                 data.Parameters("@IdPublic", New.Public.Id);
                 data.Execute();

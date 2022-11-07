@@ -14,8 +14,13 @@ namespace BooksCRUD.Views
 		protected void Page_Load(object sender, EventArgs e)
 		{
 			ChargeDdlGroup();
-			
-			ChargeBook(7);
+			TxtId.Visible = false;
+			if(Request.QueryString["Id"] != null && !IsPostBack)
+            {
+				ChargeBook(int.Parse(Request.QueryString["Id"]));
+				TxtId.Visible = true;
+				TxtId.Enabled = true;
+			}
 		}
 		private void ChargeDdlGroup()
 		{
@@ -55,6 +60,34 @@ namespace BooksCRUD.Views
 			DdlPublic.SelectedValue = book.Public.Id.ToString();
         }
 
+		protected void BtnFinish_Click(object sender, EventArgs e)
+		{
+			BookData bookData = new BookData();
+			Book newBook = new Book();
 
+			if (Request.QueryString["Id"] != null)
+				newBook.Id = int.Parse(TxtId.Text);
+
+			newBook.Title = TxtTitle.Text;
+			newBook.Description = TxtDescription.Text;
+			newBook.Author = TxtAuthor.Text;
+			newBook.Url = TxtUrl.Text;
+			newBook.Cover = TxtCover.Text;
+			newBook.Year = int.Parse(TxtYear.Text);
+			newBook.Category = new Category();
+			newBook.Category.Id = int.Parse(DdlCategory.SelectedValue);
+			newBook.Genre = new Genre();
+			newBook.Genre.Id = int.Parse(DdlGenre.SelectedValue);
+			newBook.Public = new Public();
+			newBook.Public.Id = int.Parse(DdlPublic.SelectedValue);
+			
+
+			if (Request.QueryString["Id"] != null)
+				bookData.UpdateSP(newBook);
+			else
+				bookData.InsertSP(newBook);
+
+			Response.Redirect("Default.aspx");
+        }
     }
 }
