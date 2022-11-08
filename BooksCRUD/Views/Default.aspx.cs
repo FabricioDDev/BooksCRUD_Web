@@ -117,5 +117,13 @@ namespace BooksCRUD.Views
         {
             GvBookCharge();
         }
+
+      
+
+        protected void GvBook_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var Id = GvBook.SelectedDataKey.Value.ToString();
+            Response.Redirect("FrmBookRegister.aspx?Id=" + Id);
+        }
     }
 }

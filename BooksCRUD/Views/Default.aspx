@@ -29,7 +29,7 @@
             <!-- btn ADD -->
             <asp:Button ID="BtnAddBook" runat="server" Text="Add" />
             <!-- GridView(con btn delete, uodate) -->
-            <asp:GridView ID="GvBook" AutoGenerateColumns="false" runat="server">
+            <asp:GridView ID="GvBook" OnSelectedIndexChanged="GvBook_SelectedIndexChanged" DataKeyNames="Id" AutoGenerateColumns="false" runat="server">
                 <Columns>
                     <asp:BoundField DataField="Title" HeaderText="Title" />
                     <asp:BoundField DataField="Description" HeaderText="Description" />
@@ -40,6 +40,7 @@
                     <asp:BoundField DataField="Category.Name"  HeaderText="Category" />
                     <asp:BoundField DataField="Genre.Name" HeaderText="Genre" />
                     <asp:BoundField DataField="Public.Name" HeaderText="Public" />
+                    <asp:CommandField ShowSelectButton="true" />
                 </Columns>
             </asp:GridView>
 
